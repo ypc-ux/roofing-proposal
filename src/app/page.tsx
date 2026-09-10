@@ -15,13 +15,13 @@ export default function Proposal() {
   ];
   return (
     <main className="min-h-screen max-w-6xl mx-auto px-6 py-12">
-      <section className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+      <section className="flex flex-col items-center justify-center min-h-screen text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="fade-in"><span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Partnership Proposal</span></div>
           <h1 className="fade-in fade-in-delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">20 Booked Appointments<br/><span className="text-emerald-400">in 30 Days</span></h1>
           <p className="fade-in fade-in-delay-2 text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">Pre-qualified homeowners ready to buy a roof. Each one on your calendar. <strong className="text-white">You just show up and sell.</strong></p>
           <div className="fade-in fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a href="#pricing" className="cta-pulse inline-flex items-center px-8 py-4 rounded-xl bg-emerald-500 text-white font-semibold text-lg hover:bg-emerald-600 transition-all hover:scale-105">See the Offer</a>
+            <a href="#pricing" className="cta-pulse inline-flex items-center px-8 py-4 rounded-xl bg-emerald-500 text-white font-semibold text-lg hover:bg-emerald-600 transition-all hover:scale-105">Pay $2,000 Setup</a>
             <a href="#how-it-works" className="inline-flex items-center px-8 py-4 rounded-xl border border-neutral-700 text-neutral-300 font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition-all">How It Works</a>
           </div>
         </div>
@@ -79,6 +79,7 @@ export default function Proposal() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="glow-card p-10 text-center space-y-6">
             <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">One-Time Setup</span>
+            <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center px-6 py-3 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-all">Pay Setup Fee</a>
             <div className="space-y-2"><span className="text-6xl font-bold text-white">$2,000</span><span className="block text-neutral-500">upfront</span></div>
             <ul className="space-y-3 text-left text-neutral-400">
               {['Done-for-you Meta ads','Done-for-you Google ads','Geo-targeted audience','Landing page creation','AI call system setup','Calendar integration','Tracking dashboard'].map((item,i) => (
@@ -165,7 +166,8 @@ export default function Proposal() {
       <section className="py-32"><div className="max-w-3xl mx-auto text-center space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold leading-tight">Ready to Get<br/><span className="text-emerald-400">20 Booked Appointments?</span></h2>
         <p className="text-xl text-neutral-400">Reply to this email. Lets get your first campaign live this week.</p>
-        <a href="mailto:julius@jbuilds.vercel.app?subject=Ready%20for%20Roofing%20Leads" className="cta-pulse inline-flex items-center px-12 py-5 rounded-xl bg-emerald-500 text-white font-bold text-xl hover:bg-emerald-600 transition-all hover:scale-105">Lets Get Started</a>
+        <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="cta-pulse inline-flex items-center px-12 py-5 rounded-xl bg-emerald-500 text-white font-bold text-xl hover:bg-emerald-600 transition-all hover:scale-105">Pay $2,000 Setup Fee</a>
+        <p className="text-neutral-500 text-sm mt-4">Secure payment via Whop</p>
       </div></section>
       <footer className="py-12 border-t border-neutral-800"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-neutral-500 text-sm">2026 JBuilds. All rights reserved.</p>
