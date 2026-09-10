@@ -14,8 +14,8 @@ export default function Proposal() {
     { s: '04', t: 'Book on Calendar', d: 'Date, time, address confirmed.' },
   ];
   return (
-    <main className="min-h-screen">
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center">
+    <main className="min-h-screen max-w-6xl mx-auto px-6 py-12">
+      <section className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="fade-in"><span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Partnership Proposal</span></div>
           <h1 className="fade-in fade-in-delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">20 Booked Appointments<br/><span className="text-emerald-400">in 30 Days</span></h1>
@@ -26,7 +26,7 @@ export default function Proposal() {
           </div>
         </div>
       </section>
-      <section className="py-24 px-6"><div className="max-w-5xl mx-auto">
+      <section className="py-24"><div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">The Problem with Traditional Lead Gen</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="glow-card p-8 space-y-4"><span className="text-4xl">💸</span><h3 className="text-xl font-semibold">Shared Leads</h3><p className="text-neutral-400 leading-relaxed">Same lead sent to 5 contractors.</p></div>
@@ -35,7 +35,7 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6" id="how-it-works"><div className="max-w-5xl mx-auto text-center">
+      <section className="py-24" id="how-it-works"><div className="max-w-5xl mx-auto text-center">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">The Solution</span>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">We Sell Appointments, Not Leads.</h2>
         <p className="text-xl text-neutral-400 max-w-2xl mx-auto mb-16">Every lead is pre-qualified, pre-educated, and pre-booked on your calendar.</p>
@@ -45,7 +45,7 @@ export default function Proposal() {
       </div></section>
 {/*CONTINUED*/}
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6" id="qualified-leads"><div className="max-w-5xl mx-auto">
+      <section className="py-24" id="qualified-leads"><div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">Lead Quality</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What Counts as a <span className="text-emerald-400">Qualified Lead</span></h2>
@@ -57,7 +57,7 @@ export default function Proposal() {
         </table></div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-5xl mx-auto">
+      <section className="py-24"><div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">Financial Qualification</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Verify They Can <span className="text-emerald-400">Actually Pay</span></h2>
@@ -71,7 +71,7 @@ export default function Proposal() {
       </div></section>
 {/*CONTINUED2*/}
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6" id="pricing"><div className="max-w-5xl mx-auto">
+      <section className="py-24" id="pricing"><div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">Investment</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple. Performance-Based. <span className="text-emerald-400">No Risk.</span></h2>
@@ -105,7 +105,7 @@ export default function Proposal() {
       </div></section>
 {/*CONTINUED3*/}
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-5xl mx-auto">
+      <section className="py-24"><div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How We Compare</h2>
         <div className="glow-card overflow-hidden"><table className="comparison-table">
           <thead><tr><th>Feature</th><th>HomeAdvisor</th><th>Angi</th><th className="highlight">Us</th></tr></thead>
@@ -122,7 +122,7 @@ export default function Proposal() {
         </table></div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-4xl mx-auto text-center">
+      <section className="py-24"><div className="max-w-4xl mx-auto text-center">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">Risk Reversal</span>
         <h2 className="text-3xl md:text-4xl font-bold mb-8">The Guarantee</h2>
         <div className="glow-card p-12 space-y-6">
@@ -133,7 +133,7 @@ export default function Proposal() {
       </div></section>
 {/*CONTINUED4*/}
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-4xl mx-auto text-center">
+      <section className="py-24"><div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-16">Your Potential ROI</h2>
         <div className="grid md:grid-cols-4 gap-6">
           <div className="glow-card p-8 space-y-2"><span className="stat-number text-4xl font-bold text-emerald-400 block">20</span><span className="text-sm text-neutral-500">Appointments/mo</span></div>
@@ -143,7 +143,7 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-4xl mx-auto text-center">
+      <section className="py-24"><div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Watch the 3-Minute Demo</h2>
         <p className="text-xl text-neutral-400 mb-12">See exactly how the system works.</p>
         <div className="glow-card p-8 aspect-video flex items-center justify-center">
@@ -154,7 +154,7 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto"/>
-      <section className="py-24 px-6"><div className="max-w-4xl mx-auto">
+      <section className="py-24"><div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">FAQ</h2>
         <div className="space-y-4">
           {[{q:'What if a lead no-shows?',a:'Does not count. You only pay for attended appointments.'},{q:'How fast do you call?',a:'Within 5 minutes. 100x more likely to connect.'},{q:'Do I run my own ads?',a:'No. We handle everything.'},{q:'What if I get less than 20 leads?',a:'You dont pay for the gap.'},{q:'How are leads qualified?',a:'6-point: geo, homeowner, intent, timeline, budget, appointment.'},{q:'Can I cancel?',a:'Yes. Month-to-month after first 30 days.'}].map((faq,i) => (
@@ -162,12 +162,12 @@ export default function Proposal() {
           ))}
         </div>
       </div></section>
-      <section className="py-32 px-6"><div className="max-w-3xl mx-auto text-center space-y-8">
+      <section className="py-32"><div className="max-w-3xl mx-auto text-center space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold leading-tight">Ready to Get<br/><span className="text-emerald-400">20 Booked Appointments?</span></h2>
         <p className="text-xl text-neutral-400">Reply to this email. Lets get your first campaign live this week.</p>
         <a href="mailto:julius@jbuilds.vercel.app?subject=Ready%20for%20Roofing%20Leads" className="cta-pulse inline-flex items-center px-12 py-5 rounded-xl bg-emerald-500 text-white font-bold text-xl hover:bg-emerald-600 transition-all hover:scale-105">Lets Get Started</a>
       </div></section>
-      <footer className="py-12 px-6 border-t border-neutral-800"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="py-12 border-t border-neutral-800"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-neutral-500 text-sm">2026 JBuilds. All rights reserved.</p>
         <p className="text-neutral-600 text-xs">Confidential - Mr. Roofing and Contracting</p>
       </div></footer>
