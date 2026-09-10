@@ -14,7 +14,7 @@ export default function Proposal() {
     { s: '04', t: 'Book on Calendar', d: 'Date, time, address confirmed.' },
   ];
   return (
-    <main className="min-h-screen max-w-6xl mx-auto px-6 py-12">
+    <main>
       <section className="flex flex-col items-center justify-center min-h-screen text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="fade-in"><span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Partnership Proposal</span></div>
