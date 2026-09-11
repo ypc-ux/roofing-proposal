@@ -82,21 +82,33 @@ h1, h2, h3 {
   line-height: 1.08;
 }
 
-/* Force centering — the fix for off-center layout */
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+h1, h2, h3 {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
 }
 
-main,
-main[class] {
-  display: block;
+main h2 {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 100vw;
-  margin: 0 auto !important;
+}
+
+/* Force ALL inner containers to center */
+main .max-w-5xl,
+main .max-w-4xl,
+main .max-w-3xl,
+main .max-w-2xl {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Noise texture overlay */

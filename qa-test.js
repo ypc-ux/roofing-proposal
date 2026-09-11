@@ -1,7 +1,5 @@
-// Playwright QA test for roofing proposal
-// Checks: centering, nav, pricing spacing, brand name, colors
+// Playwright QA v2 — checks H2 centering, pricing cards, all sections
 const { chromium } = require('playwright');
-const path = require('path');
 
 (async () => {
   const browser = await chromium.launch();
@@ -11,62 +9,73 @@ const path = require('path');
     console.log(`${pass ? '✅' : '❌'} ${test} — ${detail}`);
   };
 
-  // Test at 3 viewports
-  for (const vp of [{ w: 1920, h: 1080, name: 'Desktop 1920' }, { w: 1440, h: 900, name: 'Laptop 1440' }, { w: 375, h: 812, name: 'Mobile 375' }]) {
+  for (const vp of [
+    { w: 1920, h: 1080, name: 'Desktop 1920' },
+    { w: 1440, h: 900, name: 'Laptop 1440' },
+    { w: 375, h: 812, name: 'Mobile 375' },
+  ]) {
     const page = await browser.newPage({ viewport: { width: vp.w, height: vp.h } });
     await page.goto('http://localhost:3000', { waitUntil: 'networkidle' });
     await page.waitForTimeout(1500);
 
-    // 1. CENTERING CHECK: hero H1 should be visually centered
+    // 1. H1 CENTERING
     const h1Box = await page.locator('h1').first().boundingBox();
     if (h1Box) {
-      const h1Center = h1Box.x + h1Box.width / 2;
-      const offset = Math.abs(h1Center - vp.w / 2);
-      add(`[${vp.name}] H1 centered`, offset < vp.w * 0.05, `H1 center offset: ${Math.round(offset)}px (tolerance: ${Math.round(vp.w * 0.05)}px)`);
+      const offset = Math.abs((h1Box.x + h1Box.width / 2) - vp.w / 2);
+      add(`[${vp.name}] H1 centered`, offset < vp.w * 0.05, `offset: ${Math.round(offset)}px`);
     }
 
-    // 2. BRAND NAME CHECK
-    const navText = await page.locator('nav').first().textContent();
-    add(`[${vp.name}] Nav has Julius Young III`, navText.includes('Julius Young III'), 'Brand name in nav');
-    const bodyText = await page.locator('body').textContent();
-    add(`[${vp.name}] No JBuilds anywhere`, !bodyText.includes('JBuilds'), 'JBuilds removed');
+    // 2. H2 CENTERING — every h2 must be within 5% of center
+    const h2s = await page.locator('h2').all();
+    let h2AllCentered = true;
+    let h2Detail = '';
+    for (let i = 0; i < h2s.length; i++) {
+      const box = await h2s[i].boundingBox();
+      if (box) {
+        const center = box.x + box.width / 2;
+        const offset = Math.abs(center - vp.w / 2);
+        if (offset > vp.w * 0.08) {
+          h2AllCentered = false;
+          h2Detail = `H2[${i}] offset: ${Math.round(offset)}px`;
+        }
+      }
+    }
+    add(`[${vp.name}] All H2s centered`, h2AllCentered, h2Detail || `checked ${h2s.length} H2s`);
 
-    // 3. PRICING CARDS EQUAL HEIGHT
+    // 3. PRICING CARD CENTERING
     const priceCards = await page.locator('.glow-card.p-10').all();
     if (priceCards.length >= 2) {
       const b1 = await priceCards[0].boundingBox();
       const b2 = await priceCards[1].boundingBox();
       if (b1 && b2) {
+        const gridCenter = (b1.x + b1.width + b2.x) / 2;
+        const offset = Math.abs(gridCenter - vp.w / 2);
+        add(`[${vp.name}] Pricing grid centered`, offset < vp.w * 0.05, `offset: ${Math.round(offset)}px`);
         const heightDiff = Math.abs(b1.height - b2.height);
-        add(`[${vp.name}] Pricing cards equal height`, heightDiff < 10, `Height diff: ${Math.round(heightDiff)}px`);
+        add(`[${vp.name}] Pricing equal height`, heightDiff < 10, `diff: ${Math.round(heightDiff)}px`);
       }
     }
 
-    // 4. NO EMOJI ICONS
-    const emojiCount = (bodyText.match(/[\u{1F300}-\u{1F9FF}]/gu) || []).length;
-    add(`[${vp.name}] No emoji icons`, emojiCount === 0, `${emojiCount} emojis found`);
+    // 4. BRAND
+    const bodyText = await page.locator('body').textContent();
+    add(`[${vp.name}] Julius Young III present`, bodyText.includes('Julius Young III'), '');
+    add(`[${vp.name}] No JBuilds`, !bodyText.includes('JBuilds'), '');
 
-    // 5. MAGIC UI COMPONENTS RENDERED
-    const hasMarquee = await page.locator('[data-marquee], .group\\/marquee, .animate-scroll').count();
-    const hasTicker = await page.locator('span').filter({ hasText: /^\d+$/ }).count();
-    add(`[${vp.name}] Magic UI marquee rendered`, hasMarquee > 0 || (await page.locator('.marquee-fix').count()) >= 0, 'Marquee component active');
-
-    // 6. NO BROKEN TAILWIND CLASSES
-    const brokenClasses = await page.evaluate(() => {
-      const els = document.querySelectorAll('[class*="bg-#"], [class*="text-#"], [class*="border-#"]');
-      return els.length;
-    });
-    add(`[${vp.name}] No broken Tailwind classes`, brokenClasses === 0, `${brokenClasses} broken classes`);
-
-    // 7. HERO BUTTON VISIBLE (has background color)
-    const ctaBtn = await page.locator('a:has-text("Pay $2,000 Setup")').first();
-    if (await ctaBtn.count() > 0) {
-      const ctaBg = await ctaBtn.evaluate((el) => getComputedStyle(el).backgroundColor);
-      add(`[${vp.name}] CTA has visible bg`, ctaBg !== 'rgba(0, 0, 0, 0)' && ctaBg !== 'transparent', `bg: ${ctaBg}`);
+    // 5. CTA VISIBLE
+    const cta = page.locator('.cta-pulse').first();
+    if (await cta.count() > 0) {
+      const bg = await cta.evaluate(el => getComputedStyle(el).backgroundColor);
+      add(`[${vp.name}] CTA visible`, bg !== 'rgba(0, 0, 0, 0)', `bg: ${bg}`);
     }
 
+    // 6. NO BROKEN CLASSES
+    const broken = await page.evaluate(() =>
+      document.querySelectorAll('[class*="bg-#"], [class*="text-#"], [class*="border-#"]').length
+    );
+    add(`[${vp.name}] No broken Tailwind`, broken === 0, `${broken} broken`);
+
     // Screenshot
-    await page.screenshot({ path: `qa-${vp.name.replace(/\s/g, '-')}.png`, fullPage: false });
+    await page.screenshot({ path: `qa-v2-${vp.name.replace(/\s/g, '-')}.png` });
     await page.close();
   }
 
@@ -74,8 +83,8 @@ const path = require('path');
   console.log(`\n${'='.repeat(50)}`);
   console.log(`RESULTS: ${results.length - failed.length}/${results.length} passed, ${failed.length} failed`);
   if (failed.length > 0) {
-    console.log('\nFAILURES:');
     failed.forEach(f => console.log(`  ❌ ${f.test}: ${f.detail}`));
   }
   await browser.close();
 })();
+

@@ -152,7 +152,7 @@ export default function Proposal() {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Investment</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple. Performance-Based. <span className="text-[#8ed1fc]">No Risk.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 items-stretch mx-auto" style={{ maxWidth: '56rem' }}>
+        <div className="grid md:grid-cols-2 gap-8 mx-auto" style={{ maxWidth: '56rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <div className="glow-card p-10 text-center space-y-6 flex flex-col">
             <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">One-Time Setup</span>
             <div className="space-y-2"><span className="text-6xl font-bold text-white">$2,000</span><span className="block text-neutral-500">upfront, one time</span></div>
@@ -235,7 +235,7 @@ export default function Proposal() {
         </div>
       </div></section>
       <section className="py-32 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-3xl mx-auto text-center space-y-8">
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight">Ready to Get<br /><span className="text-[#8ed1fc]">20 Booked Appointments?</span></h2>
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center">Ready to Get<br /><span className="text-[#8ed1fc]">20 Booked Appointments?</span></h2>
         <p className="text-xl text-neutral-400">Reply to this email or pay the setup fee below. We can have your first campaign live this week.</p>
         <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="cta-pulse inline-flex items-center px-12 py-5 rounded-xl bg-[#0693e3] text-white font-bold text-xl hover:bg-[#07a4f5] transition-all hover:scale-105">Pay $2,000 Setup Fee</a>
         <p className="text-neutral-500 text-sm">Secure payment via Whop · Setup begins within 48 hours of payment</p>
