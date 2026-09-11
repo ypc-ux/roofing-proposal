@@ -92,7 +92,7 @@ export default function Proposal() {
       </section>
 
       {/* Social proof marquee — Magic UI */}
-      <div className="py-5 border-y border-neutral-800/60 bg-[#0d1520]/60 relative">
+      <div className="mb-20 py-5 border-y border-neutral-800/60 bg-[#0d1520]/60 relative">
         <Marquee pauseOnHover className="[--duration:28s]">
           <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Bolt className="w-4 h-4 text-[#0693e3]" /> 100% Exclusive Leads</span>
           <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Clock className="w-4 h-4 text-[#0693e3]" /> 5-Minute Speed to Lead</span>
@@ -148,7 +148,7 @@ export default function Proposal() {
           <div className="glow-card p-8 space-y-4"><HomeIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Home Equity</h3><p className="text-neutral-400 leading-relaxed">Verified through property data. They can finance or pay cash — not a maybe.</p></div>
           <div className="glow-card p-8 space-y-4"><CardIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Budget Confirmation</h3><p className="text-neutral-400 leading-relaxed">The AI asks about budget directly. Filters tire-kickers instantly.</p></div>
         </div>
-        <div className="mt-12 glow-card p-8 text-center"><p className="text-lg text-neutral-300 max-w-3xl mx-auto"><strong className="text-white">The result:</strong> You meet a homeowner who owns their home, has a real project, has confirmed budget, and is expecting your call. That&apos;s not a lead. That&apos;s an appointment.</p></div>
+        <div className="mt-20 glow-card p-8 text-center"><p className="text-lg text-neutral-300 max-w-3xl mx-auto"><strong className="text-white">The result:</strong> You meet a homeowner who owns their home, has a real project, has confirmed budget, and is expecting your call. That&apos;s not a lead. That&apos;s an appointment.</p></div>
       </div></section>
 {/*CONTINUED2*/}
       <div className="section-divider max-w-5xl mx-auto" />
@@ -169,7 +169,7 @@ export default function Proposal() {
             </ul>
             <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-4 rounded-xl bg-[#0693e3] text-white font-semibold hover:bg-[#07a4f5] transition-all">Pay Setup Fee →</a>
           </div>
-          <div className="glow-card p-10 text-center space-y-6 flex flex-col relative">
+          <div className="glow-card p-10 text-center space-y-6 flex flex-col relative" style={{ paddingTop: '3.5rem' }}>
             <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#0693e3] text-white">Best Value</span></div>
             <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Per Appointment</span>
             <div className="space-y-2"><span className="text-6xl font-bold text-[#8ed1fc]">$200</span><span className="block text-neutral-500">per booked appointment</span></div>
