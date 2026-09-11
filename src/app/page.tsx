@@ -1,3 +1,12 @@
+"use client";
+
+import { Marquee } from "@/components/ui/marquee";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { MagicCard } from "@/components/ui/magic-card";
+import { ShineBorder } from "@/components/ui/shine-border";
+
 const Check = ({ className = "w-5 h-5 text-[#8ed1fc] shrink-0 mt-0.5" }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
 );
@@ -53,7 +62,7 @@ export default function Proposal() {
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-3">
           <a href="#" className="flex items-center gap-2">
             <Bolt className="w-5 h-5 text-[#0693e3]" />
-            <span className="text-sm font-bold tracking-wider uppercase text-white">JBuilds</span>
+            <span className="text-sm font-bold tracking-wider text-white">Julius Young III</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-neutral-400">
             <a href="#how-it-works" className="hover:text-[#8ed1fc] transition-colors">How It Works</a>
@@ -81,19 +90,16 @@ export default function Proposal() {
         </div>
       </section>
 
-      <div className="py-5 border-y border-neutral-800/60 bg-[#0d1520]/60 overflow-hidden relative">
-        <div className="marquee-track">
-          {[0, 1].map((n) => (
-            <div key={n} className="flex items-center gap-12 pr-12 text-sm text-neutral-500 whitespace-nowrap">
-              <span className="flex items-center gap-2"><Bolt className="w-4 h-4 text-[#0693e3]" /> 100% Exclusive Leads</span>
-              <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#0693e3]" /> 5-Minute Speed to Lead</span>
-              <span className="flex items-center gap-2"><Target className="w-4 h-4 text-[#0693e3]" /> 6-Point Qualification</span>
-              <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0693e3]" /> Financial Verification</span>
-              <span className="flex items-center gap-2"><CalIcon className="w-4 h-4 text-[#0693e3]" /> Booked on Your Calendar</span>
-              <span className="flex items-center gap-2"><HomeIcon className="w-4 h-4 text-[#0693e3]" /> Homeowner Verified</span>
-            </div>
-          ))}
-        </div>
+      {/* Social proof marquee — Magic UI */}
+      <div className="py-5 border-y border-neutral-800/60 bg-[#0d1520]/60 relative">
+        <Marquee pauseOnHover className="[--duration:28s]">
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Bolt className="w-4 h-4 text-[#0693e3]" /> 100% Exclusive Leads</span>
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Clock className="w-4 h-4 text-[#0693e3]" /> 5-Minute Speed to Lead</span>
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Target className="w-4 h-4 text-[#0693e3]" /> 6-Point Qualification</span>
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><Shield className="w-4 h-4 text-[#0693e3]" /> Financial Verification</span>
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><CalIcon className="w-4 h-4 text-[#0693e3]" /> Booked on Your Calendar</span>
+          <span className="flex items-center gap-2 mx-6 text-sm text-neutral-500 whitespace-nowrap"><HomeIcon className="w-4 h-4 text-[#0693e3]" /> Homeowner Verified</span>
+        </Marquee>
       </div>
 
       <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
@@ -146,26 +152,27 @@ export default function Proposal() {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Investment</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple. Performance-Based. <span className="text-[#8ed1fc]">No Risk.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="glow-card p-10 text-center space-y-6">
+        <div className="grid md:grid-cols-2 gap-8 items-stretch mx-auto" style={{ maxWidth: '56rem' }}>
+          <div className="glow-card p-10 text-center space-y-6 flex flex-col">
             <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">One-Time Setup</span>
             <div className="space-y-2"><span className="text-6xl font-bold text-white">$2,000</span><span className="block text-neutral-500">upfront, one time</span></div>
-            <ul className="space-y-3 text-left text-neutral-400">
+            <ul className="space-y-3 text-left text-neutral-400 flex-1">
               {['Done-for-you Meta ads', 'Done-for-you Google ads', 'Geo-targeted audience build', 'Landing page creation', 'AI call system setup', 'Calendar integration', 'Tracking dashboard'].map((item, i) => (
                 <li key={i} className="flex items-start gap-3"><Check />{item}</li>
               ))}
             </ul>
             <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-4 rounded-xl bg-[#0693e3] text-white font-semibold hover:bg-[#07a4f5] transition-all">Pay Setup Fee →</a>
           </div>
-          <div className="glow-card p-10 text-center space-y-6 border-[#0693e3]/50 relative">
+          <div className="glow-card p-10 text-center space-y-6 flex flex-col relative">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#0693e3] text-white">Best Value</span></div>
             <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Per Appointment</span>
             <div className="space-y-2"><span className="text-6xl font-bold text-[#8ed1fc]">$200</span><span className="block text-neutral-500">per booked appointment</span></div>
-            <ul className="space-y-3 text-left text-neutral-400">
+            <ul className="space-y-3 text-left text-neutral-400 flex-1">
               {['20 guaranteed appointments/mo', 'Only pay for booked + attended', 'AI calls in 5 minutes', 'Pre-qualified on the call', 'Booked on your calendar', 'Financial verification included', 'No gap charge if under 20'].map((item, i) => (
                 <li key={i} className="flex items-start gap-3"><Check />{item}</li>
               ))}
             </ul>
+            <div className="inline-flex items-center justify-center w-full px-6 py-4 rounded-xl border border-[#0693e3]/30 text-[#8ed1fc] font-semibold text-sm">Billed after appointments are delivered</div>
           </div>
         </div>
         <div className="mt-12 glow-card p-8 text-center max-w-4xl mx-auto">
@@ -179,7 +186,7 @@ export default function Proposal() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">How We Compare</h2>
         <p className="text-lg text-neutral-500 text-center mb-16">You&apos;ve tried the rest. Here&apos;s the difference.</p>
         <div className="glow-card overflow-hidden"><table className="comparison-table">
-          <thead><tr><th>Feature</th><th>HomeAdvisor</th><th>Angi</th><th className="highlight">JBuilds</th></tr></thead>
+          <thead><tr><th>Feature</th><th>HomeAdvisor</th><th>Angi</th><th className="highlight">Julius Young III</th></tr></thead>
           <tbody>
             <tr><td className="font-semibold">Cost per lead</td><td className="text-neutral-500">$15–$85</td><td className="text-neutral-500">$15–$75</td><td className="highlight">$200/appointment</td></tr>
             <tr><td className="font-semibold">Exclusivity</td><td className="text-neutral-500"><XIcon /></td><td className="text-neutral-500"><XIcon /></td><td className="highlight"><Check className="w-4 h-4" /></td></tr>
@@ -207,10 +214,10 @@ export default function Proposal() {
       <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-16">Your Potential ROI</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="glow-card p-8 space-y-2"><span className="stat-number text-4xl font-bold text-[#8ed1fc] block">20</span><span className="text-sm text-neutral-500">Appointments/mo</span></div>
-          <div className="glow-card p-8 space-y-2"><span className="stat-number text-4xl font-bold text-[#8ed1fc] block">4</span><span className="text-sm text-neutral-500">Closed deals (20%)</span></div>
-          <div className="glow-card p-8 space-y-2"><span className="stat-number text-4xl font-bold text-[#8ed1fc] block">$40K+</span><span className="text-sm text-neutral-500">Revenue from 4 roofs</span></div>
-          <div className="glow-card p-8 space-y-2"><span className="stat-number text-4xl font-bold text-[#8ed1fc] block">10x</span><span className="text-sm text-neutral-500">ROI on $4K invest</span></div>
+          <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block"><NumberTicker value={20} className="text-[#8ed1fc]" /></span><span className="text-sm text-neutral-500">Appointments/mo</span></div>
+          <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block"><NumberTicker value={4} className="text-[#8ed1fc]" /></span><span className="text-sm text-neutral-500">Closed deals (20%)</span></div>
+          <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block">$<NumberTicker value={40} delay={0.3} className="text-[#8ed1fc]" />K+</span><span className="text-sm text-neutral-500">Revenue from 4 roofs</span></div>
+          <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block"><NumberTicker value={10} delay={0.5} className="text-[#8ed1fc]" />x</span><span className="text-sm text-neutral-500">ROI on $4K invest</span></div>
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
@@ -234,7 +241,7 @@ export default function Proposal() {
         <p className="text-neutral-500 text-sm">Secure payment via Whop · Setup begins within 48 hours of payment</p>
       </div></section>
       <footer className="py-12 border-t border-neutral-800 px-6"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2"><Bolt className="w-4 h-4 text-[#0693e3]" /><span className="text-neutral-500 text-sm font-bold tracking-wider uppercase">JBuilds</span></div>
+        <div className="flex items-center gap-2"><Bolt className="w-4 h-4 text-[#0693e3]" /><span className="text-neutral-500 text-sm font-bold tracking-wider">Julius Young III</span></div>
         <p className="text-neutral-600 text-xs">Confidential proposal — Prepared for Mr. Roofing &amp; Contracting</p>
       </div></footer>
     </main>
