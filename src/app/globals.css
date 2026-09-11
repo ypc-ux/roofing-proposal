@@ -1,15 +1,17 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
 
 :root {
-  --color-bg: #0a0a0a;
-  --color-surface: #111111;
-  --color-surface-2: #1a1a1a;
-  --color-border: #2a2a2a;
+  --color-bg: #060a12;
+  --color-surface: #0d1520;
+  --color-surface-2: #131d2b;
+  --color-border: #1e2a3a;
   --color-text: #f5f5f5;
-  --color-text-muted: #999999;
-  --color-accent: #10b981;
-  --color-accent-hover: #059669;
-  --color-accent-glow: rgba(16, 185, 129, 0.15);
+  --color-text-muted: #8b98a9;
+  --color-accent: #0693e3;
+  --color-accent-2: #8ed1fc;
+  --color-accent-hover: #07a4f5;
+  --color-accent-glow: rgba(6, 147, 227, 0.18);
   --color-danger: #ef4444;
   --color-warning: #f59e0b;
 }
@@ -27,7 +29,7 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -37,35 +39,23 @@ body {
   padding: 0;
 }
 
-/* Force centering — not relying on Tailwind for this */
+h1, h2, h3 {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+}
+
+/* Force centering */
 main,
 main[class] {
   margin-left: auto !important;
   margin-right: auto !important;
   display: block;
-  float: none !important;
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-  width: 100%;
-  max-width: 72rem !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-}
-
-/* Ensure all sections inside main are full width of main */
-main > section,
-main > div {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Force tables and cards to stretch within their container */
-main section table {
+  position: relative;
+  z-index: 1;
   width: 100%;
 }
-
 
 /* Noise texture overlay */
 body::before {
@@ -73,6 +63,18 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Animated gradient mesh background */
+.mesh-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(6, 147, 227, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(142, 209, 252, 0.07), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(6, 147, 227, 0.06), transparent);
   pointer-events: none;
   z-index: 0;
 }
@@ -82,7 +84,7 @@ body::before {
   position: fixed;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.08;
+  opacity: 0.1;
   pointer-events: none;
   z-index: 0;
 }
@@ -90,7 +92,7 @@ body::before {
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: #10b981;
+  background: #0693e3;
   top: -200px;
   right: -200px;
   animation: float 20s ease-in-out infinite;
@@ -99,7 +101,7 @@ body::before {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: #3b82f6;
+  background: #0ea5e9;
   bottom: -200px;
   left: -200px;
   animation: float 25s ease-in-out infinite reverse;
@@ -110,6 +112,19 @@ body::before {
   50% { transform: translate(30px, -30px); }
 }
 
+/* Glass sticky nav */
+.glass-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(6, 10, 18, 0.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* Glow card effect */
 .glow-card {
   position: relative;
@@ -117,7 +132,7 @@ body::before {
   border: 1px solid var(--color-border);
   border-radius: 16px;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .glow-card::before {
@@ -135,8 +150,9 @@ body::before {
 }
 
 .glow-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 30px var(--color-accent-glow);
+  border-color: rgba(6, 147, 227, 0.5);
+  box-shadow: 0 0 40px var(--color-accent-glow);
+  transform: translateY(-2px);
 }
 
 .glow-card:hover::before {
@@ -145,8 +161,8 @@ body::before {
 
 /* Pulse animation for CTA */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  50% { box-shadow: 0 0 20px 10px rgba(16, 185, 129, 0.1); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 147, 227, 0.45); }
+  50% { box-shadow: 0 0 24px 10px rgba(6, 147, 227, 0.12); }
 }
 
 .cta-pulse {
@@ -155,20 +171,11 @@ body::before {
 
 /* Fade in animation */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.fade-in {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
+.fade-in { animation: fade-in-up 0.6s ease-out forwards; }
 .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
 .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
 .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
@@ -220,8 +227,20 @@ body::before {
 
 .comparison-table .highlight {
   background: var(--color-accent-glow);
-  color: var(--color-accent);
+  color: var(--color-accent-2);
   font-weight: 600;
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
 }
 
 /* Scroll indicator */
