@@ -18,8 +18,8 @@ export default function Proposal() {
       <section className="flex flex-col items-center justify-center min-h-screen text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="fade-in"><span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Partnership Proposal</span></div>
-          <h1 className="fade-in fade-in-delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">20 Booked Appointments<br/><span className="text-emerald-400">in 30 Days</span></h1>
-          <p className="fade-in fade-in-delay-2 text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">Pre-qualified homeowners ready to buy a roof. Each one on your calendar. <strong className="text-white">You just show up and sell.</strong></p>
+          <h1 className="fade-in fade-in-delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">Your Competitor Already<br/><span className="text-[#0693e3]">Booked the Lead</span><br/>You Missed.</h1>
+          <p className="fade-in fade-in-delay-2 text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">Speed-to-lead is the #1 predictor of who closes the job. Average contractor calls back in 42 minutes. We call in 5. You just show up and sell.</p>
           <div className="fade-in fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a href="#pricing" className="cta-pulse inline-flex items-center px-8 py-4 rounded-xl bg-emerald-500 text-white font-semibold text-lg hover:bg-emerald-600 transition-all hover:scale-105">Pay $2,000 Setup</a>
             <a href="#how-it-works" className="inline-flex items-center px-8 py-4 rounded-xl border border-neutral-700 text-neutral-300 font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition-all">How It Works</a>
