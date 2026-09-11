@@ -78,6 +78,7 @@ export default function Proposal() {
 
       <section className="flex flex-col items-center justify-center min-h-screen text-center relative overflow-hidden pt-24">
         <div className="mesh-bg" />
+        <div className="grid-pattern" />
         <div className="max-w-4xl mx-auto space-y-8 px-6 relative z-10">
           <div className="fade-in"><span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20">Confidential Proposal — Mr. Roofing &amp; Contracting</span></div>
           <h1 className="fade-in fade-in-delay-1 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">Matt — Your Competitor<br /><span className="text-[#0693e3]">Already Booked the Lead</span><br />You Missed.</h1>
@@ -102,27 +103,30 @@ export default function Proposal() {
         </Marquee>
       </div>
 
-      <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">The Problem with Traditional Lead Gen</h2>
         <p className="text-lg text-neutral-500 text-center mb-16 max-w-2xl mx-auto">You already know this. You&apos;ve lived it.</p>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-10">
           <div className="glow-card p-8 space-y-4"><ShareIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Shared Leads</h3><p className="text-neutral-400 leading-relaxed">The same lead gets sold to 4-5 contractors. Whoever calls first wins. Everyone else pays for nothing.</p></div>
           <div className="glow-card p-8 space-y-4"><Clock className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Slow Follow-Up</h3><p className="text-neutral-400 leading-relaxed">Industry average speed-to-lead: 42 minutes. 78% of homeowners hire whoever responds first.</p></div>
           <div className="glow-card p-8 space-y-4"><FilterIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">No Quality Control</h3><p className="text-neutral-400 leading-relaxed">Form fills from tire-kickers, renters, and price shoppers who will never buy.</p></div>
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6" id="how-it-works"><div className="mesh-bg" /><div className="max-w-5xl mx-auto text-center">
+      <section className="py-40 relative overflow-hidden px-6" id="how-it-works"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto text-center">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">The Solution</span>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">We Sell <span className="text-[#8ed1fc]">Appointments</span>, Not Leads.</h2>
-        <p className="text-xl text-neutral-400 max-w-2xl mx-auto mb-16">Every lead is pre-qualified, pre-educated, and pre-booked on your calendar before you ever touch the phone.</p>
-        <div className="grid md:grid-cols-2 gap-6 text-left">{S.map((item, i) => (
-          <div key={i} className="glow-card p-8 flex gap-6"><span className="text-5xl font-bold text-[#0693e3]/20 shrink-0">{item.s}</span><div><h3 className="text-xl font-semibold mb-2">{item.t}</h3><p className="text-neutral-400 leading-relaxed">{item.d}</p></div></div>
+        <p className="text-xl text-neutral-400 max-w-2xl mx-auto mb-24">Every lead is pre-qualified, pre-educated, and pre-booked on your calendar before you ever touch the phone.</p>
+        <div className="grid md:grid-cols-2 gap-10 text-left">{S.map((item, i) => (
+          <div key={i} className="glow-card p-8 flex gap-10"><span className="text-5xl font-bold text-[#0693e3]/20 shrink-0">{item.s}</span><div><h3 className="text-xl font-semibold mb-2">{item.t}</h3><p className="text-neutral-400 leading-relaxed">{item.d}</p></div></div>
         ))}</div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6" id="qualified-leads"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+      <section className="py-40 relative overflow-hidden px-6" id="qualified-leads"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto">
+        <div className="text-center mb-24">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Lead Quality</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What Counts as a <span className="text-[#8ed1fc]">Qualified Lead</span></h2>
           <p className="text-xl text-neutral-400 max-w-2xl mx-auto">6 checkpoints. Fails one = you do not pay for it. Period.</p>
@@ -133,12 +137,13 @@ export default function Proposal() {
         </table></div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto">
+        <div className="text-center mb-24">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Financial Qualification</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Verify They Can <span className="text-[#8ed1fc]">Actually Pay</span></h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-10">
           <div className="glow-card p-8 space-y-4"><Shield className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Insurance Claims</h3><p className="text-neutral-400 leading-relaxed">Verify active coverage on the call. Highest-converting lead type in roofing.</p></div>
           <div className="glow-card p-8 space-y-4"><HomeIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Home Equity</h3><p className="text-neutral-400 leading-relaxed">Verified through property data. They can finance or pay cash — not a maybe.</p></div>
           <div className="glow-card p-8 space-y-4"><CardIcon className="w-8 h-8 text-[#0693e3]" /><h3 className="text-xl font-semibold">Budget Confirmation</h3><p className="text-neutral-400 leading-relaxed">The AI asks about budget directly. Filters tire-kickers instantly.</p></div>
@@ -147,8 +152,9 @@ export default function Proposal() {
       </div></section>
 {/*CONTINUED2*/}
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6" id="pricing"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+      <section className="py-40 relative overflow-hidden px-6" id="pricing"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto">
+        <div className="text-center mb-24">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Investment</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple. Performance-Based. <span className="text-[#8ed1fc]">No Risk.</span></h2>
         </div>
@@ -182,9 +188,10 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-5xl mx-auto">
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">How We Compare</h2>
-        <p className="text-lg text-neutral-500 text-center mb-16">You&apos;ve tried the rest. Here&apos;s the difference.</p>
+        <p className="text-lg text-neutral-500 text-center mb-24">You&apos;ve tried the rest. Here&apos;s the difference.</p>
         <div className="glow-card overflow-hidden"><table className="comparison-table">
           <thead><tr><th>Feature</th><th>HomeAdvisor</th><th>Angi</th><th className="highlight">Julius Young III</th></tr></thead>
           <tbody>
@@ -200,9 +207,10 @@ export default function Proposal() {
         </table></div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6" id="guarantee"><div className="mesh-bg" /><div className="max-w-4xl mx-auto text-center">
+      <section className="py-40 relative overflow-hidden px-6" id="guarantee"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-4xl mx-auto text-center">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase bg-[#0693e3]/10 text-[#8ed1fc] border border-[#0693e3]/20 mb-6">Risk Reversal</span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">The Guarantee</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-14">The Guarantee</h2>
         <div className="glow-card p-12 space-y-6">
           <Target className="w-12 h-12 text-[#0693e3] mx-auto" />
           <p className="text-2xl font-semibold text-white leading-relaxed">20 booked appointments in 30 days. Guaranteed.</p>
@@ -211,9 +219,10 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16">Your Potential ROI</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-24">Your Potential ROI</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block"><NumberTicker value={20} className="text-[#8ed1fc]" /></span><span className="text-sm text-neutral-500">Appointments/mo</span></div>
           <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block"><NumberTicker value={4} className="text-[#8ed1fc]" /></span><span className="text-sm text-neutral-500">Closed deals (20%)</span></div>
           <div className="glow-card p-8 space-y-2"><span className="text-4xl font-bold text-[#8ed1fc] block">$<NumberTicker value={40} delay={0.3} className="text-[#8ed1fc]" />K+</span><span className="text-sm text-neutral-500">Revenue from 4 roofs</span></div>
@@ -221,8 +230,9 @@ export default function Proposal() {
         </div>
       </div></section>
       <div className="section-divider max-w-5xl mx-auto" />
-      <section className="py-24 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">FAQ</h2>
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-24">FAQ</h2>
         <div className="space-y-4">
           {[{ q: 'What if a lead no-shows?', a: 'Does not count. You only pay for attended appointments. A no-show is on us, not you.' },
             { q: 'How fast do you call?', a: 'Within 5 minutes of form submission. Speed-to-lead is the #1 close rate predictor — we make the call while the homeowner is still looking at your ad.' },
@@ -234,7 +244,8 @@ export default function Proposal() {
           ))}
         </div>
       </div></section>
-      <section className="py-32 relative overflow-hidden px-6"><div className="mesh-bg" /><div className="max-w-3xl mx-auto text-center space-y-8">
+      <section className="py-40 relative overflow-hidden px-6"><div className="mesh-bg" />
+        <div className="grid-pattern" /><div className="max-w-3xl mx-auto text-center space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center">Ready to Get<br /><span className="text-[#8ed1fc]">20 Booked Appointments?</span></h2>
         <p className="text-xl text-neutral-400">Reply to this email or pay the setup fee below. We can have your first campaign live this week.</p>
         <a href="https://whop.com/velocitydemos/velocitydemos-marketing-services/" target="_blank" rel="noopener noreferrer" className="cta-pulse inline-flex items-center px-12 py-5 rounded-xl bg-[#0693e3] text-white font-bold text-xl hover:bg-[#07a4f5] transition-all hover:scale-105">Pay $2,000 Setup Fee</a>
